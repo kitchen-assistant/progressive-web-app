@@ -1,0 +1,25 @@
+
+<div *ngIf="authService.user | async; then authenticated else notAuthenticated">
+  <!-- template will replace this div -->
+</div>
+
+<ng-template #notAuthenticated >
+
+  <div class="container row loginContainer">
+    <div class="col-md-12 text-center">
+      <h3>KITCHEN ASSIST</h3>
+      <!--<i class="fa fa-user-circle-o fa-4x" aria-hidden="true"></i>-->
+      <img src="../assets/ka2.png" width="80" height="80">
+      <p >Making your kitchen smarter with the Google Home</p>
+
+  <button (click)="login()" class="text-center loginButton">
+    <i class="fa fa-google fa-2x"></i> Login with Google
+  </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #authenticated>
+  <app-home></app-home>
+</ng-template>
+

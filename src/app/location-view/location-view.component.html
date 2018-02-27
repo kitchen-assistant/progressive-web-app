@@ -1,0 +1,33 @@
+
+<div class="panel panel-default addPanel text-center">
+  <div class="panel-heading">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+    <i class="fa fa-plus fa-2x"></i></a>
+    Add a Location
+  </div>
+  <div id="collapse1" class="panel-collapse collapse">
+    <div class="panel-body">
+      <form #addForm class="addForm" (ngSubmit)="addLocation(Location.value); resetForm(addForm)">
+    <div>
+    <label class="addLabel" for="locationName">
+      ADD A LOCATION:
+    </label>
+    <input  class="addInput" id="locationName" type="text" name="location" #Location placeholder="Location name ie; fridge" required>
+<!--<button type="submit" (click)="setShowLocation(false)">add</button>-->
+      <button type="submit">add</button>
+      </div>
+    </form></div>
+  </div>
+</div>
+
+
+<div class="col-sm-4 locationPanel panel panel-default" *ngFor=" let location of locations | async">
+    <div class="panel-heading">{{location?.data.name}}</div>
+    <div class="panel-body"><i class="fa fa-braille" aria-hidden="true">
+    </i>
+    </div>
+    <div class="panel-footer text-center">
+      <button class="btn btn-default locationButtons"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+      <button class="btn btn-default locationButtons" (click)="deleteLocation(location.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    </div>
+</div>

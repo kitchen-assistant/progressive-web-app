@@ -1,0 +1,26 @@
+.locationPanel{
+  margin-top: 20px;
+  width: 255px;
+  margin-left: 5%;
+  background-color: white;
+  box-shadow: 2px 2px 15px 2px;
+}
+.panel-heading{
+  color: #333;
+  background-color: #f5f5f500;
+  border-color: aqua;
+}
+.locationButtons{
+  margin-right: 30px;
+  background-color: transparent;
+}
+.locationButtons:hover{
+  border-color: darkgray;
+  color: darkgray;
+}
+.addPanel{
+  margin-left: 80%;
+  width: 200px;
+  background-color: transparent;
+  border-color: transparent;
+}

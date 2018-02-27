@@ -1,0 +1,21 @@
+.itemWell{
+  margin-top: 20px;
+  width: 255px;
+  margin-left: 5%;
+  background-color: white;
+  box-shadow: 2px 2px 15px 2px;
+}
+.currentLocationItem{
+  width: 300px;
+  margin: auto;
+  font-size: 25px;
+  color: gray;
+}
+.locationDivider{
+  border-top: 1px solid aqua;
+  width: 150px;
+}
+#itemsSection{
+  margin-top: 60px;
+}
+

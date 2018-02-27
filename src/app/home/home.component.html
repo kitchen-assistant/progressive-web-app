@@ -1,0 +1,276 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div [ngClass]="{'change': navChangeVisible}" (click)="navChangeVisible = !navChangeVisible">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <!--<i class="fa fa-bars fa-2x" aria-hidden="true"> Kitchen Assist</i>-->
+      <!--<a class="navbar-brand" href="#">-->
+        <!--<img alt="Brand" src="...">-->
+      <!--</a>-->
+    </div>
+    <ul class="nav navbar-nav navbar-left">
+      <div class="appName"><a href="#" class="appName">
+      {{appName}}
+      </a>
+      </div>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <a href="#" *ngIf="authService.user | async">
+        <button class="btn btn-default navbar-btn cartBtn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+      </a>
+
+      <a (click)="logout()" *ngIf="authService.user | async">
+       <button class="btn btn-default navbar-btn logout">Logout</button>
+      </a>
+    </ul>
+  </div>
+</nav>
+
+<div [ngClass]="{'changeSideNav': navChangeVisible}" class="sideNav">
+  <div *ngIf="authService.user | async as user">
+    <div class="picDiv">
+      <img class="img-round prof_pic" [src]="user.photoURL">
+    </div>
+    <div class="userName text-center">{{user.displayName}}!</div>
+    <hr id="navDivider">
+    <div id="one" class="well menuItem" data-toggle="collapse" data-target="#navLocations" (click)="activate('one')">
+          <i class="fa fa-home fa-2x"  aria-hidden="true">&nbsp; &nbsp; Dashboard</i>
+    </div>
+    <div class="text-left collapse" id="navLocations">
+      <div class="navLocation" *ngFor="let location of locations | async">
+        <a (click)="setCurrentLocation(location.id); activeLocation(location.id)" class="navLocationLink" id="{{location.id}}">{{location.data.name}}</a>
+      </div>
+    </div>
+    <div id="two" class="well  menuItem" (click)="activate('two')">
+      <i class="fa fa-cog fa-2x" aria-hidden="true">&nbsp; &nbsp; Locations</i>
+    </div>
+   <div id="three" class="well menuItem" (click)="activate('three')">
+      <i class="fa fa-cog fa-2x" aria-hidden="true">&nbsp; &nbsp; Items</i>
+    </div>
+  </div>
+</div>
+
+
+<div [ngClass]="{'changeCanvas': navChangeVisible}" class="canvas">
+<section class="wrapper">
+    <div class="col-lg-9 text-center">
+      <div *ngIf="dashboardView">
+        <app-dash-board></app-dash-board>
+      </div>
+        <app-location-view *ngIf="locationView"></app-location-view>
+
+      <div *ngIf="itemView">
+        <app-item-view></app-item-view>
+      </div>
+    </div>
+    <div class="col-lg-3" id="rightPanel">
+      <div class="text-center">
+        <h4 class="rightNavHeader">NOTIFICATIONS</h4>
+        <div class="well notification">coming soon</div>
+        <div class="well notification">coming soon</div>
+        <div class="well notification">coming soon</div>
+        <div class="well notification">coming soon</div>
+        <div class="well notification">coming soon</div>
+      </div>
+    </div>
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- NEED METHODS FROM HERE-->
+
+<!--<div class="row">-->
+    <!--<div class="well locationWell col-sm-6">-->
+      <!--<h3>Your Locations</h3>-->
+      <!--<div  class="text-center" *ngFor="let location of locations | async">-->
+        <!--<div id="ellipsis" class="well text-right">-->
+          <!--<i class="fa fa-ellipsis-v" aria-hidden="true"></i>-->
+          <!--<div class="location well text-center" (click)="setCurrentLocation(location.id)">-->
+            <!--<div> {{location.data.name}}</div>-->
+            <!--(<a href="#" (click)="deleteLocation(location.id)">delete</a>)-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+  <!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">-->
+        <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">-->
+          <!--<i class="fa fa-plus fa-2x"></i></a>-->
+        <!--Add a Location-->
+    <!--</div>-->
+    <!--<div id="collapse1" class="panel-collapse collapse">-->
+      <!--<div class="panel-body">-->
+        <!--<form class="addForm" (ngSubmit)="addLocation(Location.value)">-->
+        <!--<div>-->
+          <!--<label class="addLabel" for="locationName">-->
+            <!--ADD A LOCATION:-->
+          <!--</label>-->
+          <!--<input  class="addInput" id="locationName" type="text" name="location" #Location placeholder="Location name ie; fridge" required>-->
+          <!--&lt;!&ndash;<button type="submit" (click)="setShowLocation(false)">add</button>&ndash;&gt;-->
+          <!--<button type="submit">add</button>-->
+        <!--</div>-->
+      <!--</form></div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<div class="col-sm-8">-->
+  <!--<h3>{{(currentLocation| async)?.name}} Items</h3>-->
+  <!--<div class="row">-->
+  <!--<div *ngFor="let item of locationItems | async;"  class="col-md-4 well itemWell text-center" >-->
+    <!--{{item.data.name}}-->
+    <!--<hr>-->
+    <!--&lt;!&ndash;<br>&ndash;&gt;-->
+    <!--Expiration Date: {{item.data.expirationDate}}-->
+  <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="panel panel-default">-->
+  <!--<div class="panel-heading">-->
+    <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">-->
+      <!--<i class="fa fa-plus fa-2x"></i></a>-->
+    <!--Add Item-->
+  <!--</div>-->
+  <!--<div id="collapse2" class="panel-collapse collapse">-->
+    <!--<div class="panel-body">-->
+      <!--<form #addForm class="addForm col-md-3" (ngSubmit)="addItem(selectedLocation?.id,selectedLocation?.data.name,itemName.value, itemExpiration.value); resetForm(addForm)">-->
+        <!--<div>-->
+          <!--ADD AN ITEM:-->
+          <!--<label class="locationSelectorLabel" for="locationSelector">-->
+            <!--Location:-->
+          <!--</label>-->
+          <!--<select id="locationSelector" [(ngModel)]="selectedLocation"  [ngModelOptions]="{standalone: true}">-->
+            <!--<option *ngFor="let location of locations | async;" [ngValue]="location">{{location.data.name}}</option>-->
+          <!--</select>-->
+          <!--<label class="addLabel" for="itemName">-->
+            <!--Item name:-->
+          <!--</label>-->
+          <!--<input  class="addInput" id="itemName" type="text" name="itemName" #itemName placeholder="milk or eggs or etc" required>-->
+          <!--<label class="addLabel" for="itemExpiration">-->
+            <!--expiration date:-->
+          <!--</label>-->
+          <!--<input  class="addInput" id="itemExpiration" type="text" name="itemExpiration" #itemExpiration placeholder="milk or eggs or etc" required>-->
+          <!--&lt;!&ndash;<button type="submit" (click)="setShowItem(false)">add item</button>&ndash;&gt;-->
+          <!--<button type="submit" >add item</button>-->
+
+        <!--</div>-->
+      <!--</form>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<form #addForm class="addForm col-md-3" (ngSubmit)="addItem(selectedLocation?.id,selectedLocation?.data.name,itemName.value, itemExpiration.value); resetForm(addForm)">-->
+  <!--<div>-->
+    <!--ADD AN ITEM:-->
+    <!--<label class="locationSelectorLabel" for="locationSelector">-->
+      <!--Location:-->
+    <!--</label>-->
+    <!--<select id="locationSelector" [(ngModel)]="selectedLocation"  [ngModelOptions]="{standalone: true}">-->
+      <!--<option *ngFor="let location of locations | async;" [ngValue]="location">{{location.data.name}}</option>-->
+    <!--</select>-->
+    <!--<label class="addLabel" for="itemName">-->
+      <!--Item name:-->
+    <!--</label>-->
+    <!--<input  class="addInput" id="itemName" type="text" name="itemName" #itemName placeholder="milk or eggs or etc" required>-->
+    <!--<label class="addLabel" for="itemExpiration">-->
+      <!--expiration date:-->
+    <!--</label>-->
+    <!--<input  class="addInput" id="itemExpiration" type="text" name="itemExpiration" #itemExpiration placeholder="milk or eggs or etc" required>-->
+    <!--&lt;!&ndash;<button type="submit" (click)="setShowItem(false)">add item</button>&ndash;&gt;-->
+    <!--<button type="submit" >add item</button>-->
+
+  <!--</div>-->
+<!--</form>-->
+
+<!--<form  class="addForm col-md-3" (ngSubmit)="addItem(itemName.value, itemExpiration.value, location.id)">-->
+  <!--<div>-->
+    <!--<label class="addLabel" for="itemName">-->
+      <!--ADD AN ITEM:-->
+      <!--Item name:-->
+    <!--</label>-->
+    <!--<input  class="addInput" id="itemName" type="text" name="itemName" #itemName placeholder="milk, eggs, etc,...." required>-->
+    <!--<label class="addLabel" for="itemExpiration">-->
+      <!--expiration date:-->
+    <!--</label>-->
+    <!--<input  class="addInput" id="itemExpiration" type="text" name="itemExpiration" #itemExpiration placeholder="milk, eggs, etc,...." required>-->
+
+    <!--<button type="submit">add item</button>-->
+  <!--</div>-->
+<!--</form>-->
+
+<!--<ul *ngFor="let location of locations | async">-->
+  <!--<li (click)="getLocation()">-->
+    <!--<strong>-->
+      <!--{{location.data.name}}-->
+    <!--</strong>-->
+  <!--</li>-->
+  <!--</ul>-->
+
+
+

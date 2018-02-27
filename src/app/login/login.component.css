@@ -1,0 +1,16 @@
+.loginButton{
+  width: 200px;
+  margin-top: 20px;
+  background-color: transparent;
+  border-color: aqua;
+}
+.fa-google{
+  /*color: #1304043d;*/
+  color: aqua;
+  margin-right: 20px;
+  /*color: transparent;*/
+}
+.loginContainer{
+  margin: auto;
+  margin-top: 10%;
+}
