@@ -10,7 +10,7 @@ import {DataService} from '../data.service';
   styleUrls: ['./dash-board.component.css']
 })
 export class DashBoardComponent implements OnInit {
-  constructor(private dataService: DataService) {
+  constructor(public dataService: DataService) {
   }
   ngOnInit() {
   }
