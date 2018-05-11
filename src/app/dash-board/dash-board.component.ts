@@ -13,5 +13,6 @@ export class DashBoardComponent implements OnInit {
   constructor(public dataService: DataService) {
   }
   ngOnInit() {
+    document.body.classList.add('home-bg-img');
   }
 }

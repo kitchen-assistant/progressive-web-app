@@ -18,11 +18,14 @@ export class LoginComponent implements OnInit {
   constructor(public authService: AuthService, private router: Router) {
      }
   ngOnInit() {
+    document.body.classList.add('bg-img');
   }
 login() {
   this.authService.login();
 }
 logout() {
+  document.body.classList.add('bg-img');
+  document.body.classList.remove('home-bg-img');
   this.authService.logout();
   this.router.navigate(['/']);
 }

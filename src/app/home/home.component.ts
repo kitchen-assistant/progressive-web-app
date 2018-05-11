@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
     });
   }
   ngOnInit() {
+    document.body.classList.remove('bg-img');
   }
 setCurrentLocation(locationId) {
     this.dataService.setCurrentLocation(locationId);
@@ -55,9 +56,12 @@ setCurrentLocation(locationId) {
     let i;
     for ( i = 0; i < divs.length; ++i) {
       divs[i].style.backgroundColor = 'transparent';
+      // document.getElementById(id).classList.remove('active');
     }
-    document.getElementById(id).style.backgroundColor = 'aqua';
-    if (id === 'one'){
+    // document.getElementById(id).style.backgroundColor = 'aqua';
+    // document.getElementById(id).classList.add('active');
+    document.getElementById(id).style.backgroundColor = '#df776f';
+    if (id === 'one') {
       this.dashboardView = true;
       this.locationView = false;
       this.itemView = false;
@@ -78,7 +82,8 @@ setCurrentLocation(locationId) {
     for ( i = 0; i < divs.length; ++i) {
       divs[i].style.color = '#797979';
     }
-    document.getElementById(id).style.color = 'aqua';
+    // document.getElementById(id).style.color = 'aqua';
+    document.getElementById(id).style.color = '#df776f';
   }
 }
 

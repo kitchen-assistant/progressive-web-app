@@ -12,17 +12,19 @@
 .userName{
   margin-left: -15%;
   margin-top: 5%;
-  color: white;
+  /*color: aqua;*/
+  color: gray;
 }
 
 #navDivider{
-  border-top: 1px solid aqua;
+  border-top: 1px solid #df776f;
   margin-left: 10%;
   width: 150px;
 }
 .cartBtn{
   margin-right: 100px;
   background-color: transparent;
+  color: #df776f;
 }
 .cartBtn:hover{
  border-color: darkgray;
@@ -38,17 +40,19 @@
   color: black;
 }
 
-#ellipsis{
-  width: 100%;
-  background-color: white;
-  box-shadow: none;
-  border-right-width: unset;
-  border-bottom-width: unset;
-  /*margin-top: -7%;*/
-}
+/*#ellipsis{*/
+  /*width: 100%;*/
+  /*background-color: white;*/
+  /*box-shadow: none;*/
+  /*border-right-width: unset;*/
+  /*border-bottom-width: unset;*/
+  /*!*margin-top: -7%;*!*/
+/*}*/
 
 .navbar{
-  background-color: #00ffff30;
+  /*background-color: #00ffff30;*/
+  /*background-color: #df776f;*/
+  background-color: #111111;
 }
 
 /*Navebar menu*/
@@ -60,7 +64,9 @@
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  /*background-color: #333;*/
+  /*background-color: #fff;*/
+  background-color: #df776f;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -85,9 +91,12 @@
   top: 52px;
   left: 0;
   background-color: #111;
+  color: white;
+  /*background-color: #df776f;*/
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  /*box-shadow: 0 0 5px 0px darkgray !important;*/
 }
 @media screen and (max-height: 450px) {
   .sideNav {padding-top: 15px;}
@@ -136,8 +145,12 @@
    background-color: transparent;
    border-color: transparent;
  }
+
 .menuItem:hover{
-  background-color: aqua;
+  /*background-color: aqua;*/
+  /*background-color: #df776f;*/
+  background-color: gray;
+
 }
 .navLocation{
   margin-top: 15px;
@@ -162,7 +175,9 @@
   margin-left: 20px;
   font-weight: bolder;
   font-size: 20px;
-  color: gray;
+  /*color: gray;*/
+  /*color: #df776f;*/
+  color: white;
 }
 .appName:hover{
   text-decoration: none;
@@ -172,7 +187,8 @@
   background-color: #111;
   height: 80px;
   padding-top: 30px;
-  color: aqua;
+  /*color: aqua;*/
+  color: #df776f;
 }
 .notification{
   background-color: transparent;
@@ -189,8 +205,10 @@
   background-color: #f2f2f2;
 }
 .activated{
-  background-color: aqua;
+  /*background-color: aqua;*/
+  background-color: #df776f;
 }
 #one{
-  background-color: aqua;
+  /*background-color: aqua;*/
+  background-color: #df776f;
 }

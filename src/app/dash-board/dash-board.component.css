@@ -9,10 +9,12 @@
   width: 300px;
   margin: auto;
   font-size: 25px;
-  color: gray;
+  /*color: gray;*/
+  color: #fff;
 }
 .locationDivider{
-  border-top: 1px solid aqua;
+  /*border-top: 1px solid aqua;*/
+  border-top: 1px solid #df776f;
   width: 150px;
 }
 #itemsSection{

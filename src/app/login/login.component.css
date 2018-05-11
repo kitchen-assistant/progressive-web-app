@@ -3,14 +3,32 @@
   margin-top: 20px;
   background-color: transparent;
   border-color: aqua;
+  color: darkgray;
+}
+.loginButton:hover{
+  /*width: 200px;*/
+  /*margin-top: 20px;*/
+  /*background-color: transparent;*/
+  border-color: snow;
+  color: aqua !important;
 }
 .fa-google{
   /*color: #1304043d;*/
-  color: aqua;
+  /*color: aqua;*/
+  color: #df776f;
   margin-right: 20px;
   /*color: transparent;*/
 }
 .loginContainer{
   margin: auto;
   margin-top: 10%;
+}
+ .logo-Container{
+   margin-top: 100px;
+ }
+.tagline{
+  font-weight: 300;
+  font-size: 21px;
+  font-style: italic;
+  color: #c8c8c8;
 }

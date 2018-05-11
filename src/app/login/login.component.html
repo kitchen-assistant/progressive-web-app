@@ -4,13 +4,23 @@
 </div>
 
 <ng-template #notAuthenticated >
-
+<div class="row logo-Container">
+  <div class="logo"><i class="material-icons">kitchen</i>KA
+    <div class="circle-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
   <div class="container row loginContainer">
     <div class="col-md-12 text-center">
       <!--<h3>KITCHEN ASSIST</h3>-->
       <!--<i class="fa fa-user-circle-o fa-4x" aria-hidden="true"></i>-->
-      <img src="../assets/ka2.png" width="80" height="80">
-      <p >Making your kitchen smarter with the Google Home</p>
+
+      <!--<img src="../assets/ka2.png" width="80" height="80">-->
+      <p class="tagline">Making your kitchen smarter with the Google Home</p>
 
   <button (click)="login()" class="text-center loginButton">
     <i class="fa fa-google fa-2x"></i> Login with Google
