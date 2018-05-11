@@ -114,13 +114,13 @@
 .changeCanvas {
   margin-left: 0;
 }
-#rightPanel{
-  margin-right: 0;
-  /*padding-top: 20px;*/
-  margin-top: -25px;
-  height: 100%;
-  background-color: white;
-}
+/*#rightPanel{*/
+  /*margin-right: 0;*/
+  /*!*padding-top: 20px;*!*/
+  /*margin-top: -25px;*/
+  /*height: 100%;*/
+  /*background-color: white;*/
+/*}*/
 .canvas{
   height: 100%;
   padding-right: 0;
@@ -184,27 +184,27 @@
   text-decoration: none;
 }
 
-.rightNavHeader{
-  background-color: #111;
-  height: 80px;
-  padding-top: 30px;
-  /*color: aqua;*/
-  color: #df776f;
-}
-.notification{
-  background-color: transparent;
-   height: 80px;
-  border: 1px solid;
-  box-shadow: none;
-  border-color: transparent;
-   border-bottom-color: #f2f2f2;
-  padding: 0;
-  margin-bottom: 0;
+/*.rightNavHeader{*/
+  /*background-color: #111;*/
+  /*height: 80px;*/
+  /*padding-top: 30px;*/
+  /*!*color: aqua;*!*/
+  /*color: #df776f;*/
+/*}*/
+/*.notification{*/
+  /*background-color: transparent;*/
+   /*height: 80px;*/
+  /*border: 1px solid;*/
+  /*box-shadow: none;*/
+  /*border-color: transparent;*/
+   /*border-bottom-color: #f2f2f2;*/
+  /*padding: 0;*/
+  /*margin-bottom: 0;*/
 
- }
-.notification:hover{
-  background-color: #f2f2f2;
-}
+ /*}*/
+/*.notification:hover{*/
+  /*background-color: #f2f2f2;*/
+/*}*/
 .activated{
   /*background-color: aqua;*/
   background-color: #df776f;
