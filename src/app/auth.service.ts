@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import {AngularFirestore, AngularFirestoreDocument} from 'angularfire2/firestore';
 import { Router} from '@angular/router';
+import {_if} from 'rxjs/observable/if';
 
 interface User {
   uid: string;
@@ -34,8 +35,28 @@ uid: string;
     return this.oAuthLogin(provider);
   }
   private oAuthLogin(provider) {
-   this.firebaseAuth.auth.signInWithPopup(provider);
+   // this.firebaseAuth.auth.signInWithPopup(provider);
+    return this.firebaseAuth.auth.signInWithPopup(provider)
+      .then((credential) => {
+        this.updateUserData(credential.user);
+      });
   }
+  private updateUserData(user) {
+    // Sets user data to firestore on login
+
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+
+    const data: User = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL
+    };
+
+    return userRef.set(data, { merge: true });
+
+  }
+
   logout() {
     this.firebaseAuth.auth.signOut().then(() => {
       this.router.navigate(['/']);
